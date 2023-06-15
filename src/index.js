@@ -13,6 +13,7 @@ app.use(cors())
 
 
 
+const port = process.env.PORT ||3001;
 
 app.listen(3001)
 
@@ -47,7 +48,7 @@ app.get('/users', (request, response) => {
 
 app.post('/users', (request, response) => {
     const { name, age } = request.body
-    const user = {id:uuid.v4(), name: name, age:age }
+    const user = {id:uuid.v4(), name: name, pedido: age}
 
     users.push(user)
 
