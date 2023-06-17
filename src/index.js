@@ -13,9 +13,8 @@ app.use(cors())
 
 
 
-const port = process.env.PORT ||3001;
+app.listen(3001)
 
-app.listen(port)
 
 const users = []
 
@@ -42,13 +41,13 @@ const checkUserID = (request, response, next) => {
 
 
 app.get('/users', (request, response) => {
-    return response.json('hellow world')
+    return response.json(users)
 
 })
 
 app.post('/users', (request, response) => {
-    const { name, age } = request.body
-    const user = {id:uuid.v4(), name: name, pedido: age}
+    const { name, age} = request.body
+    const user = {id:uuid.v4(), name:name, age:age}
 
     users.push(user)
 
